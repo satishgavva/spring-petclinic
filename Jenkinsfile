@@ -5,17 +5,20 @@ agent any
   stages{
   
     stage ('clone'){
+            
+        agent { label 'mvnode'}
 	
-	
-      steps {
+	steps {
     
-    git url :'https://github.com/satishgavva/spring-petclinic.git' , branch 'wavefront'
+                 git url:'https://github.com/satishgavva/spring-petclinic.git' , branch : 'wavefront'
         
-      }
+                 }
     
-    }
+        }
     
     stage('build'){
+            
+          agent { label 'mvnode'}
     
       steps {
       
