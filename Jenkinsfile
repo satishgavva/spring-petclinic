@@ -16,9 +16,9 @@ git url:'https://github.com/satishgavva/spring-petclinic.git', branch : 'main'
 
 }
 
-stage {
+stage ('build code') {
 
-agent {label 'mnode'}
+agent { label 'mnode'}
 
 steps {
 
