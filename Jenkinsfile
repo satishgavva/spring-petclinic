@@ -5,6 +5,10 @@ pipeline{
         maven 'MAVEN9'
         jdk  'java19' 
     }
+  parameters {  
+
+    choice(name: 'main', choices: ['wavefront', 'springboot3', 'hacking/mysql', ''efficient-webjars], description: 'Pick something')
+  }
   
   stages{
   
@@ -33,6 +37,19 @@ pipeline{
     
     }
     
+    stage('parameter'){
+
+      agent{label 'mnode'}
+
+      steps {
+
+        echo "main: ${params.main}"
+
+      }
+
+
+
+    }
     
   
   
