@@ -1,39 +1,48 @@
 pipeline{
 
- agent { label 'mvnode'}
-  
-  stages{
-  
-    stage ('clone'){
-      
-      agent { label 'mvnode'}
-      
-      steps {
-    
-    git url:'https://github.com/satishgavva/spring-petclinic.git' ,  branch : 'main'
-        
-      }
-    
-    }
-    
-    stage('build'){
-      
-      agent { label 'mvnode'}
-    
-      steps {
-      
-      sh 'mvn package'
-      
-      }
-    
-    
-    }
-    
-    
-  
-  
-  
-  }
+agent {label 'mnode'}
+
+stages {
+
+stage ('scm clone'){
+
+  agent {label 'mnode'}
+
+steps {
+
+git url:'https://github.com/satishgavva/spring-petclinic.git', branch : 'main'
+}
+
+
+}
+
+stage {
+
+agent {label 'mnode'}
+
+steps {
+
+sh 'mvn package'
+
+}
+
+
+}
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
 
 
 
