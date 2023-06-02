@@ -8,7 +8,10 @@ pipeline{
   parameters {  
 
     choice(name: 'main', choices: ['wavefront', 'springboot3', 'hacking/mysql', 'efficient-webjars'], description: 'Pick something')
-  }
+  }      
+  triggers {
+        cron('* * * * *')
+    }
   
   stages{
   
