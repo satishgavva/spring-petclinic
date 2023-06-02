@@ -37,16 +37,7 @@ pipeline{
     
     }
     
-    stage('parameter'){
-
-      agent{label 'mnode'}
-
-      steps {
-
-        echo "main: ${params.main}"
-
-      }
-
+    
 
 
     }
