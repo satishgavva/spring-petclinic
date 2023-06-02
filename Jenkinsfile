@@ -1,6 +1,10 @@
 pipeline{
 
   agent { label 'mnode'}
+  tools {
+        maven 'MAVEN9'
+        jdk  'java19' 
+    }
   
   stages{
   
